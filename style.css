@@ -1,42 +1,118 @@
+/* =========================
+   Global variables
+   ========================= */
 :root {
-  --text: #1b1b1b;
-  --muted: #444;
-  --bg: #fff;
-  --card: #f6f7f9;
-  --border: #d6d9de;
-  --focus: #0b57d0;
+  --bg-main: linear-gradient(
+    135deg,
+    #e8f0ff 0%,
+    #f2f6ff 40%,
+    #ffffff 100%
+  );
+
+  --header-bg: linear-gradient(
+    120deg,
+    #1e3a8a 0%,
+    #2563eb 60%,
+    #3b82f6 100%
+  );
+
+  --card-bg: #ffffff;
+
+  --primary: #1e3a8a;
+  --accent: #2563eb;
+
+  --text-main: #1f2937;
+  --text-muted: #4b5563;
+
+  --border-soft: #e5e7eb;
+  --focus-ring: #2563eb;
 }
 
-* { box-sizing: border-box; }
+/* =========================
+   Base reset + typography
+   ========================= */
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
+  min-height: 100vh;
+  background: var(--bg-main);
+  color: var(--text-main);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  line-height: 1.6;
   font-size: 1rem;
+  line-height: 1.65;
 }
 
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #1e40af;
+  margin-top: 1.25rem;
+}
+
+p {
+  margin-top: 0.75rem;
+}
+
+/* =========================
+   Layout containers
+   ========================= */
 .wrap {
   max-width: 980px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
+/* =========================
+   Skip link (accessibility)
+   ========================= */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #ffffff;
+  color: #000000;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--focus-ring);
+  border-radius: 0.5rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* =========================
+   Header + navigation
+   ========================= */
 .site-header {
-  border-bottom: 1px solid var(--border);
-  background: #fbfbfc;
-}
-
-.kicker {
-  margin: 0;
-  color: var(--muted);
+  background: var(--header-bg);
+  color: #ffffff;
+  padding-bottom: 1.75rem;
 }
 
 .subtitle {
   margin: 0.25rem 0 0 0;
-  color: var(--muted);
+  color: #e0e7ff;
 }
 
 .nav {
@@ -45,90 +121,179 @@ body {
   flex-wrap: wrap;
   gap: 0.75rem;
   padding: 0;
-  margin: 0.75rem 0 0 0;
+  margin: 1rem 0 0 0;
 }
 
 .nav a {
   display: inline-block;
-  padding: 0.35rem 0.6rem;
-  border: 1px solid var(--border);
+  padding: 0.4rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
   text-decoration: none;
 }
 
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  padding: 1rem;
-  margin: 1rem 0;
+.nav a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
+/* =========================
+   Cards (main sections)
+   ========================= */
+.card {
+  background: var(--card-bg);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  margin: 2rem 0;
+  border: 1px solid var(--border-soft);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.06),
+    0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================
+   Images
+   ========================= */
 .portrait {
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   max-width: 420px;
 }
 
 .portrait img {
   width: 100%;
   height: auto;
-  border-radius: 1rem;
-  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  border: 1px solid var(--border-soft);
 }
 
-.decorative {
-  display: block;
-  margin: 0.5rem 0 1rem 0;
-}
-
-label {
-  display: block;
-  margin-top: 0.75rem;
-  font-weight: 700;
-}
-
-input, select, textarea {
+.decorative-bg {
   width: 100%;
-  font: inherit;
-  padding: 0.6rem 0.7rem;
-  border: 1px solid var(--border);
-  border-radius: 0.6rem;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 1.25rem;
+  opacity: 0.2;
+  margin: 1.5rem 0;
 }
 
-button {
-  margin-top: 1rem;
-  font: inherit;
-  font-weight: 800;
-  padding: 0.65rem 0.9rem;
-  border-radius: 0.75rem;
-  border: 1px solid var(--border);
-  background: #fff;
-  cursor: pointer;
+/* =========================
+   Lists
+   ========================= */
+ul,
+ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.4rem 0;
+}
+
+/* =========================
+   Links + focus styles
+   ========================= */
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration-thickness: 0.2em;
 }
 
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 2px;
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
 }
 
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: 0;
-  padding: 0.5rem 0.75rem;
-  background: #fff;
-  border: 2px solid var(--focus);
-  border-radius: 0.5rem;
+/* =========================
+   Tables (optional)
+   ========================= */
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 1rem;
 }
 
-.skip-link:focus {
-  left: 1rem;
-  top: 1rem;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
 }
 
-.small { color: var(--muted); }
-.site-footer { border-top: 1px solid var(--border); margin-top: 2rem; }
+caption {
+  text-align: left;
+  padding: 0.75rem;
+  font-weight: 700;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border-top: 1px solid var(--border-soft);
+  text-align: left;
+}
+
+thead th {
+  background: #f1f5f9;
+}
+
+/* =========================
+   Form styling
+   ========================= */
+fieldset {
+  border: 1px solid var(--border-soft);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: #f9fafb;
+}
+
+legend {
+  font-weight: 800;
+  padding: 0 0.25rem;
+}
+
+label {
+  display: block;
+  margin-top: 0.85rem;
+  font-weight: 700;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  font: inherit;
+  padding: 0.6rem 0.7rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border-soft);
+  background-color: #ffffff;
+}
+
+button {
+  margin-top: 1.25rem;
+  font: inherit;
+  font-weight: 800;
+  padding: 0.7rem 1rem;
+  border-radius: 0.9rem;
+  border: none;
+  background-color: var(--primary);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* =========================
+   Footer
+   ========================= */
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-soft);
+  color: var(--text-muted);
+}
