@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sakshi Naik — Web Bio</title>
+    <meta name="description" content="Web Bio for Accessible Computing: Sakshi Naik." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="wrap">
+        <p class="kicker">Web Bio</p>
+
+        <h1>Sakshi Vishwesh Naik</h1>
+        <p class="subtitle">
+          Master’s student in Electrical Engineering • Interested in accessible technology •
+          Inclusive design mindset
+        </p>
+
+        <nav aria-label="Primary">
+          <ul class="nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#accessibility">Accessibility</a></li>
+            <li><a href="#team">Team Project</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="bio-links.html">Bio Links</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <!-- Meaningful image (required) -->
+      <figure class="portrait">
+        <img
+          src="images/sakshi-photo.jpg"
+          alt="Portrait photo of Sakshi Naik."
+          width="420"
+          height="420"
+        />
+        <figcaption>That’s me—feel free to say hi in class.</figcaption>
+      </figure>
+
+      <!-- Decorative image (required) -->
+      <img
+        class="decorative"
+        src="images/decorative.svg"
+        alt=""
+        aria-hidden="true"
+        width="160"
+        height="160"
+      />
+
+      <section id="about" class="card">
+        <h2>About me</h2>
+
+        <p>
+          Hi! I’m Sakshi, a Master’s student at Texas A&amp;M University. My background is in
+          engineering, but I’m really interested in how people experience technology and how design
+          choices can make content easier to use for more people.
+        </p>
+
+        <h3>What I’m into</h3>
+        <ul>
+          <li>Building clear, well-structured digital content</li>
+          <li>Learning how accessibility improves usability for everyone</li>
+        </ul>
+
+        <h3>Why accessibility matters to me</h3>
+        <p>
+          Accessibility is not “extra”—it’s part of quality. Small details like headings, labels,
+          and keyboard-friendly layouts can remove barriers and help people participate more
+          independently. I want to learn how to design in a way that is <strong>inclusive</strong>
+          and <em>practical</em>.
+        </p>
+      </section>
+
+      <section id="accessibility" class="card">
+        <h2>My accessibility interests</h2>
+
+        <p>
+          I’m especially interested in improvements that are easy to understand, test, and maintain.
+          I like changes that make content clearer for everyone, including people using screen
+          readers or keyboard navigation.
+        </p>
+
+        <h3>Topics I want to explore more</h3>
+        <ol>
+          <li>Keyboard navigation, visible focus, and predictable interaction</li>
+          <li>Semantic HTML (headings/landmarks) and screen-reader-friendly structure</li>
+          <li>Clear language and reducing unnecessary complexity</li>
+        </ol>
+
+        <p>
+          You can find everyone’s bios on the <a href="bio-links.html">Web Page Bio Links</a> page.
+        </p>
+      </section>
+
+      <section id="team" class="card">
+        <h2>Team project fit</h2>
+
+        <p>
+          I’d love to collaborate on a project where we can identify issues, make improvements, and
+          explain why those changes matter. I’m happy to help with testing, structure, and writing
+          clear instructions.
+        </p>
+
+        <h3>Project directions I’d enjoy</h3>
+        <ul>
+          <li>Accessibility audit: evaluate a site and propose fixes with evidence</li>
+          <li>Form redesign: labels, instructions, errors, and keyboard-first flow</li>
+        </ul>
+
+        <h3>How I can contribute</h3>
+        <ul>
+          <li>Keyboard-only testing + focus order checks</li>
+          <li>Improving semantics (headings, landmarks, labels)</li>
+          <li>Writing clear, friendly microcopy for instructions and errors</li>
+        </ul>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>Contact me</h2>
+
+        <p>This form drafts an email to me (no scripting needed).</p>
+
+        <!-- Form initiates an action using mailto -->
+        <form
+          action="mailto:sakshivjn@tamu.edu"
+          method="post"
+          enctype="text/plain"
+          class="contact-form"
+        >
+          <fieldset>
+            <legend>Send a message</legend>
+
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+
+            <label for="email">Your email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic">
+              <option value="team-project">Team project idea</option>
+              <option value="accessibility-question">Accessibility question</option>
+              <option value="other">Other</option>
+            </select>
+
+            <label for="interest">What do you want to work on?</label>
+            <select id="interest" name="interest">
+              <option value="audit">Audit &amp; fixes</option>
+              <option value="forms">Forms &amp; errors</option>
+              <option value="media">Captions &amp; media</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Draft email</button>
+          </fieldset>
+        </form>
+
+        <p class="small">
+          Directory: <a href="bio-links.html">Web Page Bio Links</a>
+        </p>
+      </section>
+
+      <p class="backtotop"><a href="#top">Back to top</a></p>
+    </main>
+
+    <footer class="wrap site-footer">
+      <p>© 2026 Sakshi Vishwesh Naik</p>
+    </footer>
+  </body>
+</html>
