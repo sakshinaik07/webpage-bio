@@ -105,7 +105,7 @@ body {
 .decorative {
   display: block;
   margin: 1.5rem auto;
-  opacity: 0.25;
+  opacity: 1;
 }
 
 /* Forms */
